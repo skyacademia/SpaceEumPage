@@ -68,7 +68,7 @@ window.addEventListener("resize", resizeHeight);
 
 // 페이지 처음 로딩 시 이미지를 불러오기 위해 사용
 async function preloadImages(){
-    // id변수를 활용해서 /api/centerData/로 데이터를 ajax 요청한다.
+    // id변수를 활용해서 /api/centerData/id로 데이터를 ajax 요청한다.
     if(infiniteScrollInfo.isfetching){            
         const contentArea = document.querySelector("#scroll-section-3").querySelector(".content-area");
         const rowTag = document.createElement("div")
@@ -141,7 +141,6 @@ window.addEventListener("load", () => {
 function calculateValue(animationValues, scrollInSection, activedSectionHeight){
     let returnValue = 0;
     const scrollRateInSection = scrollInSection / activedSectionHeight;
-    console.log(animationValues);
     if(animationValues.length==3){
         const animationStartPoint = activedSectionHeight * animationValues[2].start;
         const animationEndPoint = activedSectionHeight * animationValues[2].end;
